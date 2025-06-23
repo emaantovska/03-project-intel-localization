@@ -1,208 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intel Sustainability Goals Timeline!</title>
-    <!-- Link to the CSS file -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Use a Google Font similar to Intel’s style -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intel: Sustainability Through the Ages</title>
+  <!-- Bootstrap RTL CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Use a Google Font similar to Intel’s style -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    html, body, * {
+      font-family: 'Montserrat', Arial, sans-serif !important;
+    }
+    /* Intel Modal Branding */
+    .intel-modal .modal-content {
+      border-radius: 1rem;
+      box-shadow: 0 8px 32px rgba(0, 104, 181, 0.18), 0 1.5px 6px rgba(0,0,0,0.08);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .intel-modal .modal-header {
+      background: #0068B5;
+      color: #fff;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-bottom: none;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .intel-modal .modal-title {
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .intel-modal .btn-close {
+      filter: invert(1) grayscale(1) brightness(2);
+      opacity: 0.9;
+    }
+    .intel-modal .modal-body {
+      background: #fff;
+      color: #222;
+      font-family: 'Montserrat', Arial, sans-serif;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    /* Modal fade/slide-in animation */
+    .intel-modal .modal-dialog {
+      transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s cubic-bezier(.4,0,.2,1);
+      transform: translateY(40px) scale(0.98);
+      opacity: 0;
+    }
+    .intel-modal.show .modal-dialog {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    @media (max-width: 576px) {
+      .intel-modal .modal-content {
+        border-radius: 0.5rem;
+      }
+      .intel-modal .modal-header, .intel-modal .modal-body {
+        border-radius: 0.5rem;
+      }
+    }
+  </style>
 </head>
-<body>
-    <!-- Header section with Intel logo and headline -->
-    <header class="intel-header">
-        <!-- Intel logo image -->
-        <img src="img/intel-header-logo.svg" alt="Intel Logo" class="intel-logo">
-        <!-- Headline and subheading -->
-        <div class="header-text">
-            <h1>Intel Sustainability Timeline</h1>
-            <p class="subheading">Explore the key milestones in Intel’s journey toward a more sustainable future. Discover how our commitment to innovation has shaped a more sustainable future for technology and our planet!</p>
+<body dir="ltr">
+  <!-- Header / Hero Section -->
+  <header class="intel-header">
+    <!-- Intel logo image -->
+    <img src="img/intel-header-logo.svg" alt="Intel Logo" class="intel-logo">
+    <!-- Headline and subheading -->
+    <div class="header-text">
+      <h1>Intel Sustainability Timeline</h1>
+      <p class="subheading">Explore the key milestones in Intel’s journey toward a more sustainable future. Discover how our commitment to innovation has shaped a more sustainable future for technology and our planet!</p>
+    </div>
+  </header>
+  <!-- Timeline Cards Section -->
+  <section class="timeline">
+    <div class="timeline-row flex-row" id="timelineRow">
+      <!-- Timeline item 1 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="1">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <img src="img/intelfound.jpg" alt="Intel Founding" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Robert Noyce and Gordon Moore establish Intel in Silicon Valley, setting the stage for decades of innovation in microprocessors and technology.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">1968</div>
+              <h2>Intel is Founded</h2>
+          </div>
+      </div>
+      <!-- Timeline item 2 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="2">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- Beginner: The image for the first microprocessor is in the img folder -->
+              <img src="img/Firstmicroproc.png" alt="First Microprocessor" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel introduces the world’s first commercial microprocessor, the 4004, revolutionizing computing and enabling the development of personal computers.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">1971</div>
+              <h2>First Microprocessor (4004) Launches</h2>
+          </div>
+      </div>
+      <!-- Timeline item 3 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="3">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- Beginner: The image for environmental reporting is in the img folder -->
+              <img src="img/reporting.png" alt="Environmental Reporting" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel becomes one of the first tech companies to start voluntarily reporting its environmental impact, laying the groundwork for future sustainability initiatives.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">1994</div>
+              <h2>Begins Voluntary Environmental Reporting</h2>
+          </div>
+      </div>
+      <!-- Timeline item 4 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="4">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- The image for green power is in the img folder -->
+              <img src="img/greenpower.png" alt="Green Power" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel becomes the largest voluntary corporate purchaser of green power in the U.S. under the EPA’s Green Power Partner Program, significantly reducing its carbon footprint.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">2008</div>
+              <h2>Largest Corporate Purchaser of Green Power</h2>
+          </div>
+      </div>
+      <!-- Timeline item 5 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="5">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- The image for LEED certification is in the img folder -->
+              <img src="img/LEED.png" alt="LEED Certified Building" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel opens its first LEED-certified building, a design center in Haifa, Israel, demonstrating its commitment to sustainable architecture and energy efficiency.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">2010</div>
+              <h2>First LEED-Certified Building</h2>
+          </div>
+      </div>
+      <!-- Timeline item 6 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="6">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- The image for greenhouse gas reduction is in the img folder -->
+              <img src="img/gasred.png" alt="Greenhouse Gas Reduction" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel reduces its absolute greenhouse gas emissions by more than 60% below 2007 levels, surpassing its 20% reduction goal ahead of schedule.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">2012</div>
+              <h2>Major Greenhouse Gas Reduction</h2>
+          </div>
+      </div>
+      <!-- Timeline item 7 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="7">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- The image for the White House Climate Pledge is in the img folder -->
+              <img src="img/white.png" alt="White House Climate Pledge" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel signs the U.S. White House Climate Pledge, committing to ongoing green power purchases and increased use of on-site alternative energy sources.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">2015</div>
+              <h2>White House Climate Pledge</h2>
+          </div>
+      </div>
+      <!-- Timeline item 8 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="8">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- The image for this milestone is in the img folder -->
+              <img src="img/9.png" alt="99% Renewable Electricity and Net Positive Water" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      By 2023, Intel achieves 99% renewable electricity globally, a 43% reduction in greenhouse gas emissions from its 2019 baseline, and net positive water use in four countries, including the U.S. and India.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">2023</div>
+              <h2>99% Renewable Electricity and Net Positive Water</h2>
+          </div>
+      </div>
+      <!-- Timeline item 9 with image and hover effect -->
+      <div class="timeline-item timeline-item-img" data-order="9">
+          <!-- Image at the top -->
+          <div class="timeline-img-container">
+              <!-- Beginner: The image for this milestone is in the img folder -->
+              <img src="img/10.png" alt="Net-Zero and Sustainable Product Goals" class="timeline-img">
+              <!-- Overlay and paragraph, shown only on hover -->
+              <div class="timeline-overlay">
+                  <p>
+                      Intel sets ambitious goals for 2030 and beyond: achieving 100% renewable electricity, net-zero greenhouse gas emissions in operations by 2040, reducing product carbon footprints, and increasing product energy efficiency tenfold.
+                  </p>
+              </div>
+          </div>
+          <!-- Year and heading at the bottom -->
+          <div class="timeline-bottom">
+              <div class="timeline-year">2030 &amp; Beyond</div>
+              <h2>Net-Zero and Sustainable Product Goals</h2>
+          </div>
+      </div>
+    </div>
+  </section>
+  <!-- Beginner: This message helps users know how to use the timeline -->
+  <p style="color: #0f2d64; text-align: center; font-weight: bold; margin-top: 16px;">
+    Scroll to view timeline | Hover over cards to learn more!
+  </p>
+  <!-- 3-Column Content Section -->
+  <section class="columns" aria-label="Intel Sustainability Initiatives">
+    <div class="container py-4">
+      <div class="row text-center g-4">
+        <!-- Column 1 -->
+        <div class="col-12 col-md-4 d-flex flex-column align-items-stretch h-100">
+          <div class="d-flex align-items-center mb-2 justify-content-center">
+            <img src="img/strategy.png" alt="RISE Strategy icon" style="width: 28px; height: 28px; object-fit: contain; margin-right: 8px;" aria-hidden="true" />
+            <h2 class="mb-0 fs-4" id="rise-strategy-heading">RISE Strategy</h2>
+          </div>
+          <p class="text-center flex-grow-1 d-flex align-items-center justify-content-center" id="rise-strategy-desc">
+            Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy,
+            Intel sets ambitious 2030 goals, including driving industry-wide
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+          <button type="button" class="btn btn-lg mt-auto btn-intel-cta w-100 text-white" aria-labelledby="rise-strategy-heading rise-strategy-desc" data-bs-toggle="modal" data-bs-target="#modalRiseStrategy">Learn More</button>
         </div>
-    </header>
+        <!-- Column 2 -->
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center h-100">
+          <div class="d-flex align-items-center mb-2">
+            <img src="img/deal.png" alt="Commitment icon" style="width: 28px; height: 28px; object-fit: contain; margin-right: 8px;" aria-hidden="true" />
+            <h2 class="mb-0 fs-4" id="commitment-heading">Commitment</h2>
+          </div>
+          <p class="text-center flex-grow-1 d-flex align-items-center justify-content-center" id="commitment-desc">
+            In 2022, Intel pledged to achieve net-zero greenhouse gas emissions
+            (Scope 1 and 2) by 2040. This commitment builds on decades of
+            environmental initiatives and partnerships across the semiconductor industry.
+          </p>
+          <button type="button" class="btn btn-lg mt-auto btn-intel-cta w-100 text-white" aria-labelledby="commitment-heading commitment-desc" data-bs-toggle="modal" data-bs-target="#modalCommitment">Learn More</button>
+        </div>
+        <!-- Column 3 -->
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center h-100">
+          <div class="d-flex align-items-center mb-2">
+            <img src="img/water-pollution.png" alt="Water and Waste icon" style="width: 28px; height: 28px; object-fit: contain; margin-right: 8px;" aria-hidden="true" />
+            <h2 class="mb-0 fs-4" id="water-waste-heading">Water &amp; Waste</h2>
+          </div>
+          <p class="text-center flex-grow-1 d-flex align-items-center justify-content-center" id="water-waste-desc">
+            Intel conserves billions of gallons of water annually and
+            collaborates with local communities to restore watersheds.
+            Intel also upcycles and recycles materials to reduce waste and
+            advance a circular economy.
+          </p>
+          <button type="button" class="btn btn-lg mt-auto btn-intel-cta w-100 text-white" aria-labelledby="water-waste-heading water-waste-desc" data-bs-toggle="modal" data-bs-target="#modalWaterWaste">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Timeline section -->
-    <main>
-        <section class="timeline">
-            <div class="timeline-row">
-                <!-- Timeline item 1 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <img src="img/intelfound.jpg" alt="Intel Founding" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Robert Noyce and Gordon Moore establish Intel in Silicon Valley, setting the stage for decades of innovation in microprocessors and technology.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">1968</div>
-                        <h2>Intel is Founded</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 2 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- Beginner: The image for the first microprocessor is in the img folder -->
-                        <img src="img/Firstmicroproc.png" alt="First Microprocessor" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel introduces the world’s first commercial microprocessor, the 4004, revolutionizing computing and enabling the development of personal computers.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">1971</div>
-                        <h2>First Microprocessor (4004) Launches</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 3 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- Beginner: The image for environmental reporting is in the img folder -->
-                        <img src="img/reporting.png" alt="Environmental Reporting" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel becomes one of the first tech companies to start voluntarily reporting its environmental impact, laying the groundwork for future sustainability initiatives.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">1994</div>
-                        <h2>Begins Voluntary Environmental Reporting</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 4 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- The image for green power is in the img folder -->
-                        <img src="img/greenpower.png" alt="Green Power" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel becomes the largest voluntary corporate purchaser of green power in the U.S. under the EPA’s Green Power Partner Program, significantly reducing its carbon footprint.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">2008</div>
-                        <h2>Largest Corporate Purchaser of Green Power</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 5 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- The image for LEED certification is in the img folder -->
-                        <img src="img/LEED.png" alt="LEED Certified Building" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel opens its first LEED-certified building, a design center in Haifa, Israel, demonstrating its commitment to sustainable architecture and energy efficiency.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">2010</div>
-                        <h2>First LEED-Certified Building</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 6 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- The image for greenhouse gas reduction is in the img folder -->
-                        <img src="img/gasred.png" alt="Greenhouse Gas Reduction" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel reduces its absolute greenhouse gas emissions by more than 60% below 2007 levels, surpassing its 20% reduction goal ahead of schedule.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">2012</div>
-                        <h2>Major Greenhouse Gas Reduction</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 7 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- The image for the White House Climate Pledge is in the img folder -->
-                        <img src="img/white.png" alt="White House Climate Pledge" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel signs the U.S. White House Climate Pledge, committing to ongoing green power purchases and increased use of on-site alternative energy sources.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">2015</div>
-                        <h2>White House Climate Pledge</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 8 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- The image for this milestone is in the img folder -->
-                        <img src="img/9.png" alt="99% Renewable Electricity and Net Positive Water" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                By 2023, Intel achieves 99% renewable electricity globally, a 43% reduction in greenhouse gas emissions from its 2019 baseline, and net positive water use in four countries, including the U.S. and India.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">2023</div>
-                        <h2>99% Renewable Electricity and Net Positive Water</h2>
-                    </div>
-                </div>
-                <!-- Timeline item 9 with image and hover effect -->
-                <div class="timeline-item timeline-item-img">
-                    <!-- Image at the top -->
-                    <div class="timeline-img-container">
-                        <!-- Beginner: The image for this milestone is in the img folder -->
-                        <img src="img/10.png" alt="Net-Zero and Sustainable Product Goals" class="timeline-img">
-                        <!-- Overlay and paragraph, shown only on hover -->
-                        <div class="timeline-overlay">
-                            <p>
-                                Intel sets ambitious goals for 2030 and beyond: achieving 100% renewable electricity, net-zero greenhouse gas emissions in operations by 2040, reducing product carbon footprints, and increasing product energy efficiency tenfold.
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Year and heading at the bottom -->
-                    <div class="timeline-bottom">
-                        <div class="timeline-year">2030 &amp; Beyond</div>
-                        <h2>Net-Zero and Sustainable Product Goals</h2>
-                    </div>
-                </div>
+
+  <!-- RISE Strategy Modal -->
+  <div class="modal fade intel-modal" id="modalRiseStrategy" tabindex="-1" aria-labelledby="modalRiseStrategyLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRiseStrategyLabel">RISE Strategy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Intel’s RISE strategy stands for Responsible, Inclusive, Sustainable, and Enabling. Through RISE, Intel commits to ethical business practices, diversity and inclusion, environmental sustainability, and using technology to solve global challenges. By 2030, Intel aims to collaborate with 30 countries and 30,000 institutions to empower more than 30 million people. The RISE strategy guides Intel’s efforts in climate action, water stewardship, waste reduction, and responsible sourcing, all while fostering innovation and positive societal impact.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Commitment Modal -->
+  <div class="modal fade intel-modal" id="modalCommitment" tabindex="-1" aria-labelledby="modalCommitmentLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCommitmentLabel">Commitment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions across its global operations (Scope 1 and 2) by 2040. This ambitious goal builds on decades of environmental initiatives, including investing $300 million in energy conservation, transitioning to 100% renewable electricity by 2030, and constructing new facilities to LEED standards. Intel is also working with suppliers and partners to address emissions throughout its value chain, aiming for a more sustainable technology ecosystem.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Water & Waste Modal -->
+  <div class="modal fade intel-modal" id="modalWaterWaste" tabindex="-1" aria-labelledby="modalWaterWasteLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalWaterWasteLabel">Water &amp; Waste</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Intel is a leader in corporate water stewardship, aiming to achieve net positive water use by 2030—restoring more water than it consumes globally. The company invests in water conservation and restoration projects with local communities, saving billions of gallons annually. Intel also prioritizes waste reduction by upcycling and recycling materials, supporting a circular economy, and collaborating with partners to advance sustainable manufacturing and resource management.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Subscription Form -->
+  <section>
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <h2 class="mb-3 text-center">Subscribe to our Newsletter</h2>
+          <form action="#" method="post" class="needs-validation" novalidate aria-labelledby="subscribe-heading">
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">Email address <span aria-hidden="true" style="color:red">*</span></label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp emailError" required aria-required="true">
+              <div id="emailHelp" class="form-text">We’ll never share your email with anyone else.</div>
+              <div id="emailError" class="invalid-feedback" aria-live="polite"></div>
             </div>
-        </section>
-        <!-- Beginner: This message helps users know how to use the timeline -->
-        <p style="color: #0f2d64; text-align: center; font-weight: bold; margin-top: 16px;">
-            Scroll to view timeline | Hover over cards to learn more!
-        </p>
-    </main>
-
- 
+            <div class="d-grid">
+              <button type="submit" class="btn btn-lg btn-primary shadow rounded-pill fw-bold btn-intel-subscribe">Subscribe</button>
+            </div>
+            <div id="formStatus" class="mt-3" aria-live="polite"></div>
+          </form>
+          <script>
+          // Accessible validation and feedback for the subscription form
+          (function() {
+            var form = document.querySelector('.needs-validation');
+            var emailInput = document.getElementById('email');
+            var emailError = document.getElementById('emailError');
+            var formStatus = document.getElementById('formStatus');
+            if (form) {
+              form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                emailError.textContent = '';
+                formStatus.textContent = '';
+                if (!emailInput.value) {
+                  emailInput.classList.add('is-invalid');
+                  emailError.textContent = 'Email address is required.';
+                  emailInput.setAttribute('aria-invalid', 'true');
+                  return;
+                } else if (!/^\\S+@\\S+\\.\\S+$/.test(emailInput.value)) {
+                  emailInput.classList.add('is-invalid');
+                  emailError.textContent = 'Please enter a valid email address.';
+                  emailInput.setAttribute('aria-invalid', 'true');
+                  return;
+                } else {
+                  emailInput.classList.remove('is-invalid');
+                  emailInput.setAttribute('aria-invalid', 'false');
+                  formStatus.textContent = 'Thank you for subscribing!';
+                  form.reset();
+                }
+              });
+              emailInput.addEventListener('input', function() {
+                emailInput.classList.remove('is-invalid');
+                emailError.textContent = '';
+                emailInput.setAttribute('aria-invalid', 'false');
+              });
+            }
+          })();
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer Section -->
+  <footer style="background-color: #0068B5 !important;" class="text-white mt-auto py-3 sticky-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <span>&copy; 2025 Intel Project. All rights reserved.</span>
+        </div>
+        <div class="col-12 col-md-6">
+          <nav aria-label="Footer navigation">
+            <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-end gap-2">
+              <a class="btn btn-primary btn-sm shadow rounded-pill fw-bold px-3 btn-intel-cta" href="#">Privacy Policy</a>
+              <a class="btn btn-primary btn-sm shadow rounded-pill fw-bold px-3 btn-intel-cta" href="#">Terms of Use</a>
+              <a class="btn btn-primary btn-sm shadow rounded-pill fw-bold px-3 btn-intel-cta" href="#">Contact</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Dynamically set timeline direction and order based on page direction
+    function setTimelineDirection() {
+      const timelineRow = document.getElementById('timelineRow');
+      if (!timelineRow) return;
+      const items = Array.from(timelineRow.children);
+      if (document.body.dir === 'rtl') {
+        timelineRow.classList.remove('flex-row');
+        timelineRow.classList.add('flex-row-reverse');
+        timelineRow.style.overflowX = 'auto'; // Ensure horizontal scroll
+        timelineRow.style.flexWrap = 'nowrap';
+        // Ensure order is reversed for RTL
+        items.sort((a, b) => b.dataset.order - a.dataset.order).forEach(item => timelineRow.appendChild(item));
+      } else {
+        timelineRow.classList.remove('flex-row-reverse');
+        timelineRow.classList.add('flex-row');
+        timelineRow.style.overflowX = 'auto'; // Ensure horizontal scroll
+        timelineRow.style.flexWrap = 'nowrap';
+        // Ensure order is normal for LTR
+        items.sort((a, b) => a.dataset.order - b.dataset.order).forEach(item => timelineRow.appendChild(item));
+      }
+    }
+    setTimelineDirection();
+    // Optional: Listen for dir changes (if you dynamically change dir)
+    const observer = new MutationObserver(setTimelineDirection);
+    observer.observe(document.body, { attributes: true, attributeFilter: ['dir'] });
+  </script>
+  <script>
+    // RTL language codes
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+    function updateDirByLang() {
+      const html = document.documentElement;
+      const lang = (html.getAttribute('lang') || '').toLowerCase().split('-')[0];
+      if (rtlLangs.includes(lang)) {
+        html.setAttribute('dir', 'rtl');
+        document.body.setAttribute('dir', 'rtl');
+      } else {
+        html.setAttribute('dir', 'ltr');
+        document.body.setAttribute('dir', 'ltr');
+      }
+    }
+    // Run on page load
+    updateDirByLang();
+    // Watch for changes to the lang attribute
+    const langObserver = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+          updateDirByLang();
+        }
+      }
+    });
+    langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  </script>
 </body>
 </html>
