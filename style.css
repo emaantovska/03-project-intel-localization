@@ -1,0 +1,244 @@
+/* Add your CSS here */
+
+/* Use a clean, sans-serif font for clarity */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+}
+
+/* Header styling with a blue gradient background */
+.intel-header {
+    /* Gradient from lighter blue (#00C7FD) to darker blue (#0f7dc2) */
+    background: linear-gradient(to right, #00C7FD, #0f7dc2);
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items horizontally */
+    justify-content: center;/* Center items vertically */
+    padding: 32px 16px;     /* Padding for space around content */
+    margin-bottom: 32px;
+    text-align: center;     /* Center text for heading and subheading */
+}
+
+/* Intel logo styling */
+.intel-logo {
+    width: 120px;  /* Increased size for the logo */
+    height: auto;
+    margin-bottom: 16px; /* Space below the logo */
+    margin-right: 0;     /* Remove right margin since it's centered */
+}
+
+/* Header text styling */
+.header-text h1 {
+    margin: 0;
+    font-size: 2.5rem;   /* Larger heading */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subheading {
+    margin: 12px 0 0 0;
+    font-size: 1.2rem;
+    color: #e0f7fa; /* Very light blue */
+}
+
+/* Timeline section styling */
+/* By default, timeline items are in a row and scroll horizontally */
+.timeline {
+    background: none; /* No background color */
+    margin: 0 auto;
+    width: 1064px;
+    overflow-x: auto;
+    padding: 0 0 24px 0;
+    scroll-behavior: smooth;       /* Smooth scrolling effect */
+    scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+.timeline-row {
+    display: flex;                 /* Arrange items in a row */
+    flex-direction: row;           /* Horizontal layout */
+    gap: 16px;                     /* Space between items */
+}
+
+.timeline-item,
+.timeline-item-img {
+    background: #f7fafd;                /* Soft background color */
+    border: none; /* No border */
+    border-radius: 12px;                /* Rounded corners for a modern look */
+    box-shadow: 0 4px 12px rgba(15, 45, 100, 0.10); /* Soft shadow for depth */
+    transition: 
+        box-shadow 0.3s, 
+        transform 0.3s, 
+        background 0.3s;                /* Smooth transitions on hover */
+    padding: 0;                         /* Remove default padding */
+    overflow: hidden;                   /* Hide anything outside the border */
+    min-width: 250px;
+    max-width: 250px;
+    scroll-snap-align: start;      /* Snap each item to the start of the container */
+    width: 100%;           /* Make each item as wide as possible */
+    max-width: 600px;      /* Optional: limit max width for readability */
+    margin: 0 auto 24px auto; /* Center items and add space below */
+    box-sizing: border-box;   /* Include padding and border in width */
+}
+
+/* Image container at the top of the first timeline item */
+.timeline-img-container {
+    width: 100%;
+    height: 240px; /* Increased height to make the image longer */
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+    flex-shrink: 0;
+}
+
+/* The image fills the container */
+.timeline-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay is hidden by default */
+.timeline-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 45, 100, 0.92); /* Dark blue overlay */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Show overlay and paragraph on hover */
+.timeline-item-img:hover .timeline-overlay {
+    opacity: 1;
+}
+
+/* Bottom section for year and heading in the first timeline item */
+.timeline-bottom {
+    padding: 12px 12px 12px 20px;
+    background: none;
+    margin-top: auto; /* Pushes this section to the bottom */
+    text-align: center;
+}
+
+/* Make sure the year and heading are styled nicely */
+.timeline-item-img .timeline-year {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0f7dc2;
+    padding-bottom: 4px;
+}
+
+.timeline-item-img h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #222;
+    padding-bottom: 0;
+}
+
+/* Add a pop effect and a brighter background on hover */
+.timeline-item:hover,
+.timeline-item-img:hover {
+    box-shadow: 0 8px 24px rgba(15, 125, 194, 0.18); /* Bigger shadow */
+    transform: scale(1.04);                          /* Slightly larger */
+    background: #e3f4fd;                             /* Lighter blue on hover */
+}
+
+/* Add a little space inside the content for a cleaner look */
+.timeline-content,
+.timeline-bottom {
+    padding: 16px;
+}
+
+/* Make the year stand out */
+.timeline-year {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0f7dc2;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* Make the heading a bit bolder and spaced */
+.timeline-item h2,
+.timeline-item-img h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222;
+    margin: 8px 0 0 0;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .intel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .intel-logo {
+        margin-bottom: 12px;
+        margin-right: 0;
+    }
+    .timeline {
+        padding: 0 8px;
+    }
+    .timeline-item {
+        min-width: 220px;
+        max-width: 220px;
+        padding: 12px 12px 12px 16px;
+    }
+}
+
+/* On small screens, stack timeline items vertically and scroll vertically */
+@media (max-width: 700px) {
+    .timeline {
+        width: 100%;                  /* Use full width */
+        overflow-x: hidden;           /* No horizontal scroll */
+        overflow-y: auto;             /* Allow vertical scrolling */
+        scroll-snap-type: y mandatory;/* Enable vertical scroll snap */
+        max-height: 90vh;             /* Limit height so user can scroll */
+    }
+    .timeline-row {
+        display: block;               /* Stack items vertically */
+        gap: 0;
+    }
+    .timeline-item,
+    .timeline-item-img {
+        min-width: 98%;               /* Make items almost full width */
+        max-width: 98%;
+        width: 98%;
+        margin: 0 auto 24px auto;     /* Center items and add space below */
+        scroll-snap-align: start;     /* Snap each item to the top */
+    }
+}
+
+@media (max-width: 1100px) {
+    .timeline {
+        width: 100%;
+        padding: 0 8px 24px 8px;
+    }
+        padding: 12px 12px 12px 16px;   gap: 12px;
+    }   }
+}    .timeline-item {
+
+        min-width: 220px;
+        max-width: 220px;
+        padding: 12px 12px 12px 16px;
+    }
+}
